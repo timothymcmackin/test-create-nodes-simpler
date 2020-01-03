@@ -1,5 +1,21 @@
 const path = require('path');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type topicInternalHeadings implements Node {
+      path: String!
+      headings: [Headings]
+    }
+    type Headings {
+      text: String!
+      path: String!
+      level: Int!
+    }
+  `
+  createTypes(typeDefs)
+}
+
 exports.createPages = async function({ actions, graphql }) {
 
   const { createPage } = actions;
