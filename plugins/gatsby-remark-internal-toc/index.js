@@ -6,7 +6,7 @@ and creates a child node with the heading text, link, and depth.
 */
 
 module.exports = async ({ markdownAST, markdownNode, actions, createNodeId, createContentDigest }) => {
-  console.log("gatsby-remark-internal-toc")
+  console.log("gatsby-remark-internal-toc start")
   var headings = [];
   visit(markdownAST, `heading`, node => {
     if (getHeadingText(node) && getHeadingLink(node)) {
@@ -35,7 +35,7 @@ module.exports = async ({ markdownAST, markdownNode, actions, createNodeId, crea
     
     await createNode(headingNode);
   }
-    
+  console.log("gatsby-remark-internal-toc end")
   return markdownAST;
 }
 
