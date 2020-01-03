@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 
 const IndexPage = ({ data }) => {
   const { markdownRemark: post } = data;
+  console.log(data)
 
   return (
     <Layout>
@@ -25,6 +26,14 @@ query topicsByPath($path: String!) {
     frontmatter {
       path
       title
+    }
+  }
+  topicInternalHeadings(path: {eq: $path}) {
+    path
+    headings {
+      level
+      path
+      text
     }
   }
 }
