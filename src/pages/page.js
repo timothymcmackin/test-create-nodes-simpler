@@ -2,13 +2,15 @@ import React from "react"
 
 import Layout from "../components/layout"
 
-const IndexPage = ({ data }) => {
+const MainPage = ({ data }) => {
   const { markdownRemark: post } = data;
-  console.log(data)
 
   return (
     <Layout>
     <h1>{post.frontmatter.title}</h1>
+    <h2>Headings:</h2>
+    <div>{JSON.stringify(data.topicInternalHeadings)}</div>
+    <h2>Content</h2>
     <div
       className="content"
       dangerouslySetInnerHTML={{ __html: post.html }}
@@ -17,7 +19,7 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage;
+export default MainPage;
 
 export const pageQuery = graphql`
 query topicsByPath($path: String!) {

@@ -39,7 +39,7 @@ exports.createPages = async function({ actions, graphql }) {
       return Promise.reject(result.errors)
     }
 
-    const mainPage = path.resolve(`src/pages/index.js`);
+    const mainPage = path.resolve(`src/pages/page.js`);
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({

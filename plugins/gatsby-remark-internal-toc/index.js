@@ -24,12 +24,13 @@ module.exports = async ({ markdownAST, markdownNode, actions, createNodeId, crea
     const headingNode = {
       headings: headings,
       path: markdownNode.frontmatter.path,
-      id: createNodeId(markdownNode.frontmatter.path),
+      id: createNodeId(`${markdownNode.frontmatter.path}.${markdownNode.frontmatter.title}`),
       children: [],
       internal: {
         description: `Headings and links for ${markdownNode.fileAbsolutePath}`,
         type: "topicInternalHeadings",
-        contentDigest: createContentDigest(headings)
+        contentDigest: createContentDigest(headings),
+        content: JSON.stringify(headings),
       }
     };
     
