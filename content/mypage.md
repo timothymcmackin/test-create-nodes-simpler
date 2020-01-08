@@ -1,6 +1,6 @@
 ---
 title: My page
-path: /
+path: /mypage.html
 ---
 
 This is my page with headings.
