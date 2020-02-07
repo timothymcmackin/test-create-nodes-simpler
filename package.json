@@ -25,8 +25,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "rm -rf .cache/ && gatsby develop",
+    "build": "yarn run clean && gatsby build",
+    "develop": "yarn run clean && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
