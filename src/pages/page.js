@@ -9,7 +9,7 @@ const MainPage = ({ data }) => {
 
   return (
     <Layout>
-    <div>Value of data.testTestTest: {data.testTestTest || 'null'}</div>
+    <div>Value of data.testTestTest: {JSON.stringify(data.testTestTest) || 'null'}</div>
     <div>Value of markdownRemark.frontmatter.path: {data.markdownRemark.frontmatter.path}</div>
     <h2>Content</h2>
     <div
