@@ -17,7 +17,7 @@ To reproduce the problem:
 6. Note that the query returns data for the `testTestTest` node.
 7. Go to `http://localhost:8000/mypage.html`.
 8. Note that on the page, the value for `data.testTestTest.message` is null.
-8. In the console, note that the data returned from the page query includes no data for the `topicInternalHeadings` node:
+9. In the console, note that the data returned from the page query includes no data for the `topicInternalHeadings` node:
     ```
     {markdownRemark: {…}, testTestTest: null}
     ```
