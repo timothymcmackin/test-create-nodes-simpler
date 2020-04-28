@@ -3,14 +3,9 @@ const path = require('path');
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
   const typeDefs = `
-    type topicInternalHeadings implements Node {
+    type testTestTest implements Node {
       path: String!
-      headings: [Headings]
-    }
-    type Headings {
-      text: String!
-      path: String!
-      level: Int!
+      message: String!
     }
   `
   createTypes(typeDefs)

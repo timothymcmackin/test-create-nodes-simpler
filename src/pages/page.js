@@ -9,9 +9,8 @@ const MainPage = ({ data }) => {
 
   return (
     <Layout>
-    <h1>{post.frontmatter.title}</h1>
-    <h2>Headings:</h2>
-    <div>{JSON.stringify(data.topicInternalHeadings)}</div>
+    <div>Value of data.testTestTest: {data.testTestTest || 'null'}</div>
+    <div>Value of markdownRemark.frontmatter.path: {data.markdownRemark.frontmatter.path}</div>
     <h2>Content</h2>
     <div
       className="content"
@@ -32,13 +31,8 @@ query topicsByPath($path: String!) {
       title
     }
   }
-  topicInternalHeadings(path: {eq: $path}) {
-    path
-    headings {
-      level
-      path
-      text
-    }
+  testTestTest(path: {eq: $path}) {
+    message
   }
 }
 `;

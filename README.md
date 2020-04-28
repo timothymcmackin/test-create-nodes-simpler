@@ -9,28 +9,19 @@ To reproduce the problem:
 5. In GraphIQL, run this query:
     ```graphql
     query MyQuery {
-      markdownRemark(frontmatter: {path: {eq: "/mypage.html"}}) {
-        frontmatter {
-          path
-          title
-        }
-      }
-      topicInternalHeadings(path: {eq: "/mypage.html"}) {
-        headings {
-          level
-          path
-          text
-        }
+      testTestTest(path: {eq: "/mypage.html"}) {
+        message
       }
     }
     ```
-6. Note that the query returns data for the `topicInternalHeadings` node.
-7. Go to `http://localhost:8000/myPage.html`.
+6. Note that the query returns data for the `testTestTest` node.
+7. Go to `http://localhost:8000/mypage.html`.
+8. Note that on the page, the value for `data.testTestTest.message` is null.
 8. In the console, note that the data returned from the page query includes no data for the `topicInternalHeadings` node:
     ```
-    {markdownRemark: {…}, topicInternalHeadings: null}
+    {markdownRemark: {…}, testTestTest: null}
     ```
 
 Expected result: Node data appears in the log and on the page because the data is visible in graphiql.
 
-The code in `plugins/gatsby-remark-internal-toc/index.js` creates the `topicInternalHeadings` nodes.
+The code in `plugins/gatsby-remark-internal-toc/index.js` creates the `testTestTest` node.
